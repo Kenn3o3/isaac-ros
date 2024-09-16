@@ -20,7 +20,7 @@ locale  # verify settings
 First ensure that the Ubuntu Universe repository is enabled.
 
 <div style="text-align: center;">
-    <img src="img/image.png" alt="drawing" width="600"/>
+    <img src="img/1.png" alt="drawing" width="600"/>
 </div>
 
 ```
@@ -62,7 +62,7 @@ sudo apt install ros-dev-tools
 
 ### Environment setup
 
-#### Sourcing the setup script
+#### Sourcing the setup script
 Set up your environment by sourcing the following file.
 ```
 source /opt/ros/humble/setup.bash

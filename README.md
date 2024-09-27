@@ -1,3 +1,7 @@
+# System Requirement:
+
+OS: Ubuntu 22.04
+
 # ROS 2 Humble Documentation
 
 The documentation is based on https://docs.ros.org/en/humble/

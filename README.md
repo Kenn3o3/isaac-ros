@@ -30,4 +30,6 @@ The documentation is based on https://docs.omniverse.nvidia.com/isaacsim/latest/
 - [Installation](Isaac_doc/1_doc.md) [done]
 - [URDF Import: Turtlebot](Isaac_doc/2_doc.md) [done]
 - [Driving TurtleBot via ROS2 messages](Isaac_doc/3_doc.md) [done]
-- [ROS 2 Cameras](Isaac_doc/4_doc.md) []
+- [ROS 2 Cameras](Isaac_doc/4_doc.md) [done]
+- [Publishing Camera’s Data](Isaac_doc/5_doc.md) []
+- [ROS2 Clock](Isaac_doc/6_doc.md) []

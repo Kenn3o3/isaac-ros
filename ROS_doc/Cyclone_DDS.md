@@ -29,7 +29,7 @@ Install from ROS 2 apt repository
 sudo apt install ros-humble-rmw-cyclonedds-cpp
 ```
 
-Switch from other rmw to rmw_cyclonedds by specifying the environment variable.`
+Switch from other rmw to rmw_cyclonedds by specifying the environment variable.
 
 ```bash
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp

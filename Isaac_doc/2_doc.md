@@ -45,3 +45,7 @@ In cases there are no available or matching categories, or if the units are diff
 ## Next Step
 
 [Driving TurtleBot via ROS2 messages](3_doc.md)
+
+## Previous Step
+
+[Installation](1_doc.md)

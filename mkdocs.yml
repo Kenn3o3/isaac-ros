@@ -1,4 +1,4 @@
-site_name: ROS and ISAAC-ROS Documentation
+site_name: ISAAC-ROS AND ROS 2 Documentation
 site_url: https://Kenn3o3.github.io/isaac-ros/  # Update this if deploying to GitHub Pages
 theme:
   name: material  # Change to 'mkdocs' if not using Material theme

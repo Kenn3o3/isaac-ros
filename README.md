@@ -17,6 +17,6 @@ site_url: https://<Your github username>.github.io/isaac-ros/
 
 # Build and Serve Your Website Locally
 ```
-cd /isaac-ros/site
+cd /isaac-ros
 mkdocs serve
 ```

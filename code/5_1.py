@@ -1,39 +1,3 @@
-# Publishing Camera’s Data
-
-[Reference](https://docs.omniverse.nvidia.com/isaacsim/latest/ros2_tutorials/tutorial_ros2_camera_publishing.html#isaac-sim-app-tutorial-ros2-camera-publishing)
-
-## Setup VSCode Coding Environment
-
-In Isaac Sim, click on Window > Extensions and enable `omni.isaac.vscode` extension.
-
-Then click on Window > VS Code to open the Isaac Sim folder in a VS Code application.
-
-Source the terminal with:
-
-```bash
-export ISAACSIM_PATH="${HOME}/.local/share/ov/pkg/isaac-sim-4.0.0"
-export ISAACSIM_PYTHON_EXE="${ISAACSIM_PATH}/python.sh"
-```
-
-You can also put the above two lines at the end of ~/.bashrc so you would not need to source everytime you open a new terminal.
-
-Create a `myCode` folder under the isaac-sim-4.0.0 folder:
-
-```bash
-~/.local/share/ov/pkg/isaac-sim-4.0.0$ mkdir myCode
-cd myCode
-```
-
-To structure the project structure better, inside `/home/user1/.local/share/ov/pkg/isaac-sim-4.0.0/myCode`, create a subfolder `5`
-
-```bash
-user1@plau-desktop:~/.local/share/ov/pkg/isaac-sim-4.0.0/myCode$ mkdir 5
-cd 5
-```
-
-Create a file `camera_setup.py` in `/myCode/5`. Copy and paste the code below in `camera_setup.py`.
-
-```py
 import carb
 from isaacsim import SimulationApp
 import sys
@@ -124,20 +88,3 @@ while simulation_app.is_running():
 
 simulation_context.stop()
 simulation_app.close()
-```
-
-Run the script using:
-
-```bash
-$ISAACSIM_PYTHON_EXE camera_setup.py
-```
-
-> I got segmentation error in the first run, but in the second run, I didn't get it anymore
-
-## Next Step
-
-[ROS2 Clock](6_doc.md)
-
-## Previous Step
-
-[ROS 2 Cameras](4_doc.md)

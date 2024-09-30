@@ -696,6 +696,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#setup-vscode-coding-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup VSCode Coding Environment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#next-step" class="md-nav__link">
     <span class="md-ellipsis">
       Next Step
@@ -777,6 +786,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#setup-vscode-coding-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup VSCode Coding Environment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#next-step" class="md-nav__link">
     <span class="md-ellipsis">
       Next Step
@@ -811,8 +829,18 @@
 
 <h1 id="publishing-cameras-data">Publishing Camera’s Data<a class="headerlink" href="#publishing-cameras-data" title="Permanent link">&para;</a></h1>
 <p><a href="https://docs.omniverse.nvidia.com/isaacsim/latest/ros2_tutorials/tutorial_ros2_camera_publishing.html#isaac-sim-app-tutorial-ros2-camera-publishing">Reference</a></p>
+<h2 id="setup-vscode-coding-environment">Setup VSCode Coding Environment<a class="headerlink" href="#setup-vscode-coding-environment" title="Permanent link">&para;</a></h2>
+<p>In Isaac Sim, click on Window &gt; Extensions and enable <code>omni.isaac.vscode</code> extension.</p>
+<p>Then click on Window &gt; VS Code to open the Isaac Sim folder in a VS Code application.</p>
+<p>Source the terminal with:</p>
+<pre><code>export ISAACSIM_PATH=&quot;${HOME}/.local/share/ov/pkg/isaac-sim-4.0.0&quot;
+export ISAACSIM_PYTHON_EXE=&quot;${ISAACSIM_PATH}/python.sh&quot;
+</code></pre>
+<p>You can also put the above two lines at the end of ~/.bashrc so you would not need to source everytime you open a new terminal.</p>
+<p>echo "source /opt/ros/humble/setup.bash" &gt;&gt; ~/.bashrc</p>
 <h2 id="next-step">Next Step<a class="headerlink" href="#next-step" title="Permanent link">&para;</a></h2>
-<p><a href="../6_doc/">ROS2 Clock</a></p>
+<p>x
+<a href="../6_doc/">ROS2 Clock</a></p>
 <h2 id="previous-step">Previous Step<a class="headerlink" href="#previous-step" title="Permanent link">&para;</a></h2>
 <p><a href="../4_doc/">ROS 2 Cameras</a></p>
 

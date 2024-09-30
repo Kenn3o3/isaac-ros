@@ -4,6 +4,13 @@ theme:
   name: material  # Change to 'mkdocs' if not using Material theme
 nav:
   - Home: index.md
+  - Isaac Sim ROS Documentation:
+      - Installation: Isaac_doc/1_doc.md
+      - "URDF Import: Turtlebot": Isaac_doc/2_doc.md
+      - Driving TurtleBot via ROS2 messages: Isaac_doc/3_doc.md
+      - ROS 2 Cameras: Isaac_doc/4_doc.md
+      - Publishing Camera’s Data: Isaac_doc/5_doc.md
+      - ROS2 Clock: Isaac_doc/6_doc.md
   - ROS 2 Humble Documentation:
       - Installation: ROS_doc/1_doc.md
       - CLI tools:
@@ -17,13 +24,6 @@ nav:
           - Using `rqt_console` to view logs: ROS_doc/2_doc.md#using-rqt_console-to-view-logs
           - Launching nodes: ROS_doc/2_doc.md#launching-nodes
           - Recording and playing back data: ROS_doc/2_doc.md#recording-and-playing-back-data
-  - Isaac Sim ROS Documentation:
-      - Installation: Isaac_doc/1_doc.md
-      - "URDF Import: Turtlebot": Isaac_doc/2_doc.md
-      - Driving TurtleBot via ROS2 messages: Isaac_doc/3_doc.md
-      - ROS 2 Cameras: Isaac_doc/4_doc.md
-      - Publishing Camera’s Data: Isaac_doc/5_doc.md
-      - ROS2 Clock: Isaac_doc/6_doc.md
 markdown_extensions:
   - toc:
       permalink: true

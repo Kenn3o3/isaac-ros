@@ -833,10 +833,116 @@
 <p>In Isaac Sim, click on Window &gt; Extensions and enable <code>omni.isaac.vscode</code> extension.</p>
 <p>Then click on Window &gt; VS Code to open the Isaac Sim folder in a VS Code application.</p>
 <p>Source the terminal with:</p>
-<pre><code>export ISAACSIM_PATH=&quot;${HOME}/.local/share/ov/pkg/isaac-sim-4.0.0&quot;
+<pre><code class="language-bash">export ISAACSIM_PATH=&quot;${HOME}/.local/share/ov/pkg/isaac-sim-4.0.0&quot;
 export ISAACSIM_PYTHON_EXE=&quot;${ISAACSIM_PATH}/python.sh&quot;
 </code></pre>
 <p>You can also put the above two lines at the end of ~/.bashrc so you would not need to source everytime you open a new terminal.</p>
+<p>Create a <code>myCode</code> folder under the isaac-sim-4.0.0 folder:</p>
+<pre><code class="language-bash">~/.local/share/ov/pkg/isaac-sim-4.0.0$ mkdir myCode
+cd myCode
+</code></pre>
+<p>To structure the project structure better, inside <code>/home/user1/.local/share/ov/pkg/isaac-sim-4.0.0/myCode</code>, create a subfolder <code>5</code></p>
+<pre><code class="language-bash">user1@plau-desktop:~/.local/share/ov/pkg/isaac-sim-4.0.0/myCode$ mkdir 5
+cd 5
+</code></pre>
+<p>Create a file <code>camera_setup.py</code> in <code>/myCode/5</code>. Copy and paste the code below in <code>camera_setup.py</code>.</p>
+<pre><code class="language-py">import carb
+from isaacsim import SimulationApp
+import sys
+
+BACKGROUND_STAGE_PATH = &quot;/background&quot;
+BACKGROUND_USD_PATH = &quot;/Isaac/Environments/Simple_Warehouse/warehouse_with_forklifts.usd&quot;
+
+CONFIG = {&quot;renderer&quot;: &quot;RayTracedLighting&quot;, &quot;headless&quot;: False}
+
+# Example ROS2 bridge sample demonstrating the manual loading of stages and manual publishing of images
+simulation_app = SimulationApp(CONFIG)
+import omni
+import numpy as np
+from omni.isaac.core import SimulationContext
+from omni.isaac.core.utils import stage, extensions, nucleus
+import omni.graph.core as og
+import omni.replicator.core as rep
+import omni.syntheticdata._syntheticdata as sd
+
+from omni.isaac.core.utils.prims import set_targets
+from omni.isaac.sensor import Camera
+import omni.isaac.core.utils.numpy.rotations as rot_utils
+from omni.isaac.core.utils.prims import is_prim_path_valid
+from omni.isaac.core_nodes.scripts.utils import set_target_prims
+
+# Enable ROS2 bridge extension
+extensions.enable_extension(&quot;omni.isaac.ros2_bridge&quot;)
+
+simulation_app.update()
+
+simulation_context = SimulationContext(stage_units_in_meters=1.0)
+
+# Locate Isaac Sim assets folder to load environment and robot stages
+assets_root_path = nucleus.get_assets_root_path()
+if assets_root_path is None:
+    carb.log_error(&quot;Could not find Isaac Sim assets folder&quot;)
+    simulation_app.close()
+    sys.exit()
+
+# Loading the environment
+stage.add_reference_to_stage(assets_root_path + BACKGROUND_USD_PATH, BACKGROUND_STAGE_PATH)
+
+
+###### Camera helper functions for setting up publishers. ########
+
+# Paste functions from the tutorial here
+# def publish_camera_tf(camera: Camera): ...
+# def publish_camera_info(camera: Camera, freq): ...
+# def publish_pointcloud_from_depth(camera: Camera, freq): ...
+# def publish_depth(camera: Camera, freq): ...
+# def publish_rgb(camera: Camera, freq): ...
+
+###################################################################
+
+# Create a Camera prim. Note that the Camera class takes the position and orientation in the world axes convention.
+camera = Camera(
+    prim_path=&quot;/World/floating_camera&quot;,
+    position=np.array([-3.11, -1.87, 1.0]),
+    frequency=20,
+    resolution=(256, 256),
+    orientation=rot_utils.euler_angles_to_quats(np.array([0, 0, 0]), degrees=True),
+)
+camera.initialize()
+
+simulation_app.update()
+camera.initialize()
+
+############### Calling Camera publishing functions ###############
+
+# Call the publishers.
+# Make sure you pasted in the helper functions above, and uncomment out the following lines before running.
+
+approx_freq = 30
+#publish_camera_tf(camera)
+#publish_camera_info(camera, approx_freq)
+#publish_rgb(camera, approx_freq)
+#publish_depth(camera, approx_freq)
+#publish_pointcloud_from_depth(camera, approx_freq)
+
+####################################################################
+
+# Initialize physics
+simulation_context.initialize_physics()
+simulation_context.play()
+
+while simulation_app.is_running():
+    simulation_context.step(render=True)
+
+simulation_context.stop()
+simulation_app.close()
+</code></pre>
+<p>Run the script using:</p>
+<pre><code class="language-bash">$ISAACSIM_PYTHON_EXE camera_setup.py
+</code></pre>
+<blockquote>
+<p>I got segmentation error in the first run, but in the second run, I didn't get it anymore</p>
+</blockquote>
 <h2 id="next-step">Next Step<a class="headerlink" href="#next-step" title="Permanent link">&para;</a></h2>
 <p><a href="../6_doc/">ROS2 Clock</a></p>
 <h2 id="previous-step">Previous Step<a class="headerlink" href="#previous-step" title="Permanent link">&para;</a></h2>

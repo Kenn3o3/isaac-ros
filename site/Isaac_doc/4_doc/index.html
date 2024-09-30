@@ -1,0 +1,1145 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://Kenn3o3.github.io/isaac-ros/Isaac_doc/4_doc/">
+      
+      
+        <link rel="prev" href="../3_doc/">
+      
+      
+        <link rel="next" href="../5_doc/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>ROS 2 Cameras - ROS and ISAAC-ROS Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ros-2-cameras" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ROS and ISAAC-ROS Documentation" class="md-header__button md-logo" aria-label="ROS and ISAAC-ROS Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ROS and ISAAC-ROS Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ROS 2 Cameras
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ROS and ISAAC-ROS Documentation" class="md-nav__button md-logo" aria-label="ROS and ISAAC-ROS Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ROS and ISAAC-ROS Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ROS 2 Humble Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            ROS 2 Humble Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ROS_doc/1_doc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CLI tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            CLI tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ROS_doc/2_doc.md#configuring-environment" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuring environment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ROS_doc/2_doc.md#using-turtlesim-ros2-and-rpt" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using `turtlesim`, `ros2`, and `rpt`
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ROS_doc/2_doc.md#understanding-nodes" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Understanding nodes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ROS_doc/2_doc.md#understanding-topics" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Understanding topics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ROS_doc/2_doc.md#understanding-services" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Understanding services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ROS_doc/2_doc.md#understanding-parameters" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Understanding parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ROS_doc/2_doc.md#understanding-actions" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Understanding actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ROS_doc/2_doc.md#using-rqt_console-to-view-logs" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using `rqt_console` to view logs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ROS_doc/2_doc.md#launching-nodes" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Launching nodes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ROS_doc/2_doc.md#recording-and-playing-back-data" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recording and playing back data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Isaac Sim ROS Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Isaac Sim ROS Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_doc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_doc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    URDF Import: Turtlebot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_doc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Driving TurtleBot via ROS2 messages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    ROS 2 Cameras
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    ROS 2 Cameras
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#camera-publisher" class="md-nav__link">
+    <span class="md-ellipsis">
+      Camera Publisher
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Camera Publisher">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-cameras" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up Cameras
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graph-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Explained
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camera-helper-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Camera Helper Node
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#depth-and-other-perception-ground-truth-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Depth and other Perception Ground Truth data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Depth and other Perception Ground Truth data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#camera-info-helper-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Camera info Helper Node
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graph-shortcut" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Shortcut
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-ros-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify ROS connection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Step
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#previous-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      Previous Step
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5_doc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publishing Camera’s Data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6_doc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ROS2 Clock
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#camera-publisher" class="md-nav__link">
+    <span class="md-ellipsis">
+      Camera Publisher
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Camera Publisher">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-cameras" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up Cameras
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graph-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Explained
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camera-helper-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Camera Helper Node
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#depth-and-other-perception-ground-truth-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Depth and other Perception Ground Truth data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Depth and other Perception Ground Truth data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#camera-info-helper-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Camera info Helper Node
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graph-shortcut" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graph Shortcut
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-ros-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify ROS connection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Step
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#previous-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      Previous Step
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="ros-2-cameras">ROS 2 Cameras<a class="headerlink" href="#ros-2-cameras" title="Permanent link">&para;</a></h1>
+<p><a href="https://docs.omniverse.nvidia.com/isaacsim/latest/ros2_tutorials/tutorial_ros2_camera.html">Reference</a></p>
+<h2 id="camera-publisher">Camera Publisher<a class="headerlink" href="#camera-publisher" title="Permanent link">&para;</a></h2>
+<h3 id="setting-up-cameras">Setting Up Cameras<a class="headerlink" href="#setting-up-cameras" title="Permanent link">&para;</a></h3>
+<p>Add two cameras named <code>Camera_1</code> and <code>Camera_2</code>: in Isaac Sim select from tab <strong>Create</strong> &gt; <strong>Camera</strong>, rename the cameras byy right-clicking them on the right panel.</p>
+<p>Build an Action Graph as below:</p>
+<p><img alt="alt text" src="../img/2.png" /></p>
+<p>Parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Node</th>
+<th>Input Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Isaac Create Render Product</td>
+<td>CameraPrim</td>
+<td>/World/Camera_1</td>
+</tr>
+<tr>
+<td></td>
+<td>enabled</td>
+<td>True</td>
+</tr>
+<tr>
+<td>ROS2 Camera Helper</td>
+<td>type</td>
+<td>rgb</td>
+</tr>
+<tr>
+<td></td>
+<td>topicName</td>
+<td>rgb</td>
+</tr>
+<tr>
+<td></td>
+<td>frameId</td>
+<td>turtle</td>
+</tr>
+</tbody>
+</table>
+<h3 id="graph-explained">Graph Explained<a class="headerlink" href="#graph-explained" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>On Playback Tick Node</strong>: Producing a tick when simulation is “Playing”. Nodes that receives ticks from this node will execute their compute functions every simulation step.</p>
+</li>
+<li>
+<p><strong>ROS2 Context Node</strong>: ROS2 uses DDS for its middleware communication. DDS uses Domain ID to allow for different logical networks operate independently even though they share a physical network. ROS 2 nodes on the same domain can freely discover and send messages to each other, while ROS 2 nodes on different domains cannot. ROS2 context node creates a context with a given Domain ID. It is set to 0 by default. If Use Domain ID Env Var is checked, it will import the <code>ROS_DOMAIN_ID</code> from the environment in which you launched the current instance of Isaac Sim.</p>
+</li>
+<li>
+<p><strong>Isaac Create Render Product</strong>: Creating a render product prim which acquires the rendered data from the given camera prim and outputs the path to the render product prim. Rendering can be enabled/disabled on command by checking/unchecking the enabled field.</p>
+</li>
+<li>
+<p><strong>Isaac Run One Simulation Frame</strong>: This node will make sure the pipeline is only ran once on start.</p>
+</li>
+<li>
+<p><strong>ROS2 Camera Helper</strong>: Indicating which type of data to publish, and which rostopic to publish it on.</p>
+</li>
+</ol>
+<h3 id="camera-helper-node">Camera Helper Node<a class="headerlink" href="#camera-helper-node" title="Permanent link">&para;</a></h3>
+<p>The <em>Camera Helper</em> Node is abstracting a complex postprocessing network from the users. Once you press Play with a Camera Helper Node connected, you may see that in the list of Action Graphs when you click on the icon on the upper left corner of the Action Graph window, a new one appears: <code>/Render/PostProcessing/SDGPipeline</code>. This graph is automatically created by the Camera Helper Node. The pipeline retrieves relevant data from the renderer, process it, and send them to the corresponding ROS publisher. This graph is only created in the session you are running. It will not be saved as part of your asset and will not appear in the Stage tree.</p>
+<p><img alt="alt text" src="../img/3.png" /></p>
+<h2 id="depth-and-other-perception-ground-truth-data">Depth and other Perception Ground Truth data<a class="headerlink" href="#depth-and-other-perception-ground-truth-data" title="Permanent link">&para;</a></h2>
+<p>In addition to RGB image, the following synthetic sensor and perceptual information also are available for any camera. To see the units used for each synthetic data annotator refer to <a href="https://docs.omniverse.nvidia.com/extensions/latest/ext_replicator/annotators_details.html">omni.replicator</a>.</p>
+<ul>
+<li>Depth</li>
+<li>Point Cloud</li>
+</ul>
+<p>Before publishing the following bounding box and labels please look at the Isaac Sim Replicator Tutorials to learn about semantically annotating scenes first.</p>
+<ul>
+<li>BoundingBox 2D Tight</li>
+<li>BoundingBox 2D Loose</li>
+<li>BoundingBox 3D</li>
+<li>Semantic labels</li>
+<li>Instance Labels</li>
+</ul>
+<p>An example of publishing multiple Rostopics for multiple cameras can be found in the asset <code>Isaac/Samples/ROS2/Scenario/turtlebot_tutorial.usd</code></p>
+<h3 id="camera-info-helper-node">Camera info Helper Node<a class="headerlink" href="#camera-info-helper-node" title="Permanent link">&para;</a></h3>
+<p>The Camera Info Helper publisher node uses the following equations to calculate the K, P, R camera intrinsic matrices.</p>
+<p><strong>Parameter calculations:</strong></p>
+<ul>
+<li>fx = width * focalLength / horizontalAperture</li>
+<li>fy = height * focalLength / verticalAperture</li>
+<li>cx = width * 0.5</li>
+<li>cy = height * 0.5</li>
+</ul>
+<p><strong>K Matrix (Matrix of intrinsic parameters)</strong></p>
+<p>The K matrix is a 3x3 matrix.</p>
+<ul>
+<li>K = { fx, 0, cx 0, fy, cy 0, 0, 1 }</li>
+</ul>
+<p><strong>P Matrix (Projection Matrix)</strong></p>
+<p>For stereo cameras the stereo offset of the second camera with respect to the first camera in x and y are denoted as Tx and Ty. These values are computed automatically if two render products are attached to the node.</p>
+<p>For monocular cameras Tx = Ty = 0.</p>
+<p>The P matrix is a 3x4 row-major matrix.</p>
+<p>P = { fx, 0, cx, Tx, 0, fy, cy, Ty, 0, 0, 1, 0 }</p>
+<p><strong>R Matrix (Rectification Matrix)</strong></p>
+<p>The R matrix is a rotation matrix applied to align the camera coordinate system with the ideal stereo image plane, ensuring that epipolar lines in both stereo images become parallel. The R matrix is only used for stereo cameras and is set as a 3x3 matrix.</p>
+<h3 id="graph-shortcut">Graph Shortcut<a class="headerlink" href="#graph-shortcut" title="Permanent link">&para;</a></h3>
+<p>We provide a menu shortcut to build multiple camera sensor graphs with just a few clicks. Go to <strong>Isaac Utils</strong> &gt; <strong>Common Omnigraphs</strong> &gt; <strong>ROS2 Camera</strong>. (If you don’t see any ROS2 graphs listed, you need to first enable the ROS2 bridge). A popup box below will appear asking for the parameters needed to populate the graphs. You must provide the Graph Path, the Camera Prim, frameId, any Node Namespaces if you have one, and check the boxes for the data you wish to publish. If you wish to add the graphs to an existing graph, check the “Add to an existing graph?” box. This will append the nodes to the existing graph, and use the existing tick node, context node, and simulation time node if they exist.</p>
+<h3 id="verify-ros-connection">Verify ROS connection<a class="headerlink" href="#verify-ros-connection" title="Permanent link">&para;</a></h3>
+<p>Use <code>ros2 topic echo /depth</code> to see the raw information that is being passed along</p>
+<p>In a ROS2-sourced terminal, type in the command <code>rviz2</code> in the GUI, click <strong>Add</strong> &gt; <strong>By topic</strong> &gt; <strong>Image</strong> under <code>/rgb</code> or <code>/depth</code>.</p>
+<p><img alt="alt text" src="../img/4.png" /></p>
+<h2 id="next-step">Next Step<a class="headerlink" href="#next-step" title="Permanent link">&para;</a></h2>
+<p>Checkout <a href="../5_doc/">Publishing Camera’s Data</a> to learn how to publish camera’s data through Python scripting.</p>
+<p><a href="../6_doc/">ROS2 Clock</a> to learn to setup ROS2 Clock publishers and subscribers with Omniverse Isaac Sim.</p>
+<h2 id="previous-step">Previous Step<a class="headerlink" href="#previous-step" title="Permanent link">&para;</a></h2>
+<p><a href="../3_doc/">Driving TurtleBot via ROS2 messages</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+    
+  </body>
+</html>

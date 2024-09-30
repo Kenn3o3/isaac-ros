@@ -20,3 +20,10 @@ site_url: https://<Your github username>.github.io/isaac-ros/
 cd /isaac-ros
 mkdocs serve
 ```
+
+# Deplot Your Website on Github
+
+```
+cd /isaac-ros
+mkdocs gh-deploy
+```

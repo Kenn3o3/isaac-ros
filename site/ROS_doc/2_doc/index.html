@@ -1,0 +1,1134 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://Kenn3o3.github.io/isaac-ros/ROS_doc/2_doc/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>CLI Tools Document - ROS and ISAAC-ROS Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cli-tools-document" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ROS and ISAAC-ROS Documentation" class="md-header__button md-logo" aria-label="ROS and ISAAC-ROS Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ROS and ISAAC-ROS Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CLI Tools Document
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ROS and ISAAC-ROS Documentation" class="md-nav__button md-logo" aria-label="ROS and ISAAC-ROS Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ROS and ISAAC-ROS Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ROS 2 Humble Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            ROS 2 Humble Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_doc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CLI tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            CLI tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_doc.md#configuring-environment" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuring environment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_doc.md#using-turtlesim-ros2-and-rpt" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using `turtlesim`, `ros2`, and `rpt`
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_doc.md#understanding-nodes" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Understanding nodes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_doc.md#understanding-topics" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Understanding topics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_doc.md#understanding-services" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Understanding services
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_doc.md#understanding-parameters" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Understanding parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_doc.md#understanding-actions" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Understanding actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_doc.md#using-rqt_console-to-view-logs" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using `rqt_console` to view logs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_doc.md#launching-nodes" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Launching nodes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_doc.md#recording-and-playing-back-data" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recording and playing back data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Isaac Sim ROS Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Isaac Sim ROS Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Isaac_doc/1_doc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Isaac_doc/2_doc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    URDF Import: Turtlebot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Isaac_doc/3_doc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Driving TurtleBot via ROS2 messages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Isaac_doc/4_doc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ROS 2 Cameras
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Isaac_doc/5_doc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publishing Camera’s Data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Isaac_doc/6_doc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ROS2 Clock
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring environment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-the-setup-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Source the setup files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check environment variables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Check environment variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-ros_domain_id-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      The ROS_DOMAIN_ID variable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-ros_localhost_only-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      The ROS_LOCALHOST_ONLY variable
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-turtlesim-ros2-and-rpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using turtlesim, ros2, and rpt
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using turtlesim, ros2, and rpt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-turtlesim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install turtlesim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-turtlesim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start turtlesim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-turtlesim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use turtlesim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-rqt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install rqt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-rqt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use rqt
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use rqt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#try-the-spawn-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      Try the spawn service
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#try-the-set_pen-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      Try the set_pen service
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remapping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#close-turtlesim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Close turtlesim
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding nodes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding topics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding services
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding actions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-rqt_console-to-view-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using rqt_console to view logs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#launching-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Launching nodes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recording-and-playing-back-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recording and playing back data
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="cli-tools-document">CLI Tools Document<a class="headerlink" href="#cli-tools-document" title="Permanent link">&para;</a></h1>
+<p><a href="https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html">Reference</a></p>
+<h2 id="configuring-environment">Configuring environment<a class="headerlink" href="#configuring-environment" title="Permanent link">&para;</a></h2>
+<p><a href="https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html#configuring-environment">Reference</a></p>
+<h3 id="source-the-setup-files">Source the setup files<a class="headerlink" href="#source-the-setup-files" title="Permanent link">&para;</a></h3>
+<p>You will need to run this command on every new shell you open to have access to the ROS 2 commands, like so:</p>
+<pre><code class="language-bash">source /opt/ros/humble/setup.bash
+# or below so you don't need to source every time
+echo &quot;source /opt/ros/humble/setup.bash&quot; &gt;&gt; ~/.bashrc
+</code></pre>
+<h3 id="check-environment-variables">Check environment variables<a class="headerlink" href="#check-environment-variables" title="Permanent link">&para;</a></h3>
+<p>Only after source will these environment variables be set</p>
+<pre><code class="language-bash">printenv | grep -i ROS
+</code></pre>
+<p>Check that variables like <code>ROS_DISTRO</code> and <code>ROS_VERSION</code> are set.</p>
+<pre><code>ROS_VERSION=2
+ROS_PYTHON_VERSION=3
+ROS_DISTRO=humble
+</code></pre>
+<h4 id="the-ros_domain_id-variable">The <code>ROS_DOMAIN_ID</code> variable<a class="headerlink" href="#the-ros_domain_id-variable" title="Permanent link">&para;</a></h4>
+<p>For ROS 2 nodes on the same domain to freely communicate. All ROS 2 notes use domain ID 0 by default. To avoid interference between different groups of computers running ROS 2 on the same network, a different domain ID should be set for each group. Choose a domain ID between 0 and 101, inclusive. For example, <code>88</code></p>
+<pre><code class="language-bash">export ROS_DOMAIN_ID=88
+# Or to maintain this setting between shell sessions, add the command to your shell startup script:
+echo &quot;export ROS_DOMAIN_ID=88&quot; &gt;&gt; ~/.bashrc
+</code></pre>
+<h4 id="the-ros_localhost_only-variable">The <code>ROS_LOCALHOST_ONLY</code> variable<a class="headerlink" href="#the-ros_localhost_only-variable" title="Permanent link">&para;</a></h4>
+<p><code>ROS_LOCALHOST_ONLY</code> allows you to limit ROS 2 communication to localhost only, so that your ROS 2 system, and its topics, services, and actions will not be visible to other computers on the local network.</p>
+<pre><code class="language-bash">export ROS_LOCALHOST_ONLY=1
+# Or to maintain this setting between shell sessions, add the command to your shell startup script:
+echo &quot;export ROS_LOCALHOST_ONLY=1&quot; &gt;&gt; ~/.bashrc
+</code></pre>
+<h2 id="using-turtlesim-ros2-and-rpt">Using <code>turtlesim</code>, <code>ros2</code>, and <code>rpt</code><a class="headerlink" href="#using-turtlesim-ros2-and-rpt" title="Permanent link">&para;</a></h2>
+<p><a href="https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Introducing-Turtlesim/Introducing-Turtlesim.html">Reference</a></p>
+<h3 id="concepts">Concepts<a class="headerlink" href="#concepts" title="Permanent link">&para;</a></h3>
+<p><strong>Turtlesim</strong> is a lightweight simulator for learning ROS 2. It illustrates what ROS 2 does at the most basic level to give you an idea of what you will do with a real robot or a robot simulation later on.</p>
+<p>The <strong>ros2 tool</strong> is how the user manages, introspects, and interacts with a ROS system. It supports multiple commands that target different aspects of the system and its operation. One might use it to start a node, set a parameter, listen to a topic, and many more. The <strong>ros2 tool</strong> is part of the core ROS 2 installation.</p>
+<p><strong>rqt</strong> is a graphical user interface (GUI) tool for ROS 2. Everything done in rqt can be done on the command line, but rqt provides a more user-friendly way to manipulate ROS 2 elements.</p>
+<h3 id="install-turtlesim">Install turtlesim<a class="headerlink" href="#install-turtlesim" title="Permanent link">&para;</a></h3>
+<pre><code class="language-bash">sudo apt update
+sudo apt install ros-humble-turtlesim
+</code></pre>
+<p>Check that the package is installed:</p>
+<pre><code class="language-bash">ros2 pkg executables turtlesim
+</code></pre>
+<p>Expected output:</p>
+<pre><code class="language-bash">turtlesim draw_square
+turtlesim mimic
+turtlesim turtle_teleop_key
+turtlesim turtlesim_node
+</code></pre>
+<h3 id="start-turtlesim">Start turtlesim<a class="headerlink" href="#start-turtlesim" title="Permanent link">&para;</a></h3>
+<pre><code class="language-bash">ros2 run turtlesim turtlesim_node
+</code></pre>
+<p>What you are expected to see:</p>
+<div style="text-align: center;">
+    <img src="img/2.png" alt="drawing" width="300"/>
+</div>
+
+<pre><code>[INFO] [turtlesim]: Starting turtlesim with node name /turtlesim
+[INFO] [turtlesim]: Spawning turtle [turtle1] at x=[5.544445], y=[5.544445], theta=[0.000000]
+</code></pre>
+<h3 id="use-turtlesim">Use turtlesim<a class="headerlink" href="#use-turtlesim" title="Permanent link">&para;</a></h3>
+<p>Open another terminal and source ROS 2 again.</p>
+<pre><code class="language-bash">source /opt/ros/humble/setup.bash
+</code></pre>
+<p>Run a new node to control the turtle in the first node:</p>
+<pre><code class="language-bash">ros2 run turtlesim turtle_teleop_key
+</code></pre>
+<p>You can then use the arrow keys on your keyboard to control the turtle.</p>
+<p><strong>DO NOT CLOSE THE TERMINALS YET for the next section</strong></p>
+<h3 id="install-rqt">Install rqt<a class="headerlink" href="#install-rqt" title="Permanent link">&para;</a></h3>
+<pre><code class="language-bash">sudo apt update
+sudo apt install '~nros-humble-rqt*'
+</code></pre>
+<p>run rqt:</p>
+<pre><code class="language-bash">rqt
+</code></pre>
+<h3 id="use-rqt">Use rqt<a class="headerlink" href="#use-rqt" title="Permanent link">&para;</a></h3>
+<p>select <strong>Plugins</strong> &gt; <strong>Services</strong> &gt; <strong>Service Caller</strong> from the menu bar, you can call different services.</p>
+<div style="text-align: center;">
+    <img src="img/3.png" alt="drawing" width="500"/>
+</div>
+
+<p><strong>Plugins</strong> &gt; <strong>Services</strong> &gt; <strong>Service Caller</strong></p>
+<h4 id="try-the-spawn-service">Try the spawn service<a class="headerlink" href="#try-the-spawn-service" title="Permanent link">&para;</a></h4>
+<p><strong>Select</strong> <code>/clear</code> then <strong>Call</strong> can clear the line drawn on turtlesim.</p>
+<p><strong>Select</strong> <code>/spawn</code> </p>
+<p>You can double click between the empty single quotes in the Expression column to give value to name, e.g., <code>Kenny</code></p>
+<div style="text-align: center;">
+    <img src="img/4.png" width="500">
+</div>
+
+<p>You can change <code>x</code> and <code>y</code> to different value e.g. <code>1.0</code> and <code>1.0</code> so that the turtle will spawn in different lcoation.</p>
+<p><strong>Click</strong> Call, the turtle will then spawned in the turtlesim window. </p>
+<h4 id="try-the-set_pen-service">Try the set_pen service<a class="headerlink" href="#try-the-set_pen-service" title="Permanent link">&para;</a></h4>
+<p>Call service <code>/turtle1/set_pen</code> and set the pen <code>color</code> and <code>width</code> then <strong>call</strong> again, the pen color will change.</p>
+<h3 id="remapping">Remapping<a class="headerlink" href="#remapping" title="Permanent link">&para;</a></h3>
+<p>In order to control <code>Kenny</code>. You can remap the <code>cmd_vel</code> topic. Create a new terminal, source ROS 2, and run:</p>
+<pre><code class="language-bash">ros2 run turtlesim turtle_teleop_key --ros-args --remap turtle1/cmd_vel:=Kenny/cmd_vel
+</code></pre>
+<h3 id="close-turtlesim">Close turtlesim<a class="headerlink" href="#close-turtlesim" title="Permanent link">&para;</a></h3>
+<p>Close the <code>turtlesim_node</code> terminal and the <code>turtle_teleop_key</code> terminals.</p>
+<h2 id="understanding-nodes">Understanding nodes<a class="headerlink" href="#understanding-nodes" title="Permanent link">&para;</a></h2>
+<p><a href="https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes.html#understanding-nodes">Reference</a></p>
+<h2 id="understanding-topics">Understanding topics<a class="headerlink" href="#understanding-topics" title="Permanent link">&para;</a></h2>
+<h2 id="understanding-services">Understanding services<a class="headerlink" href="#understanding-services" title="Permanent link">&para;</a></h2>
+<h2 id="understanding-parameters">Understanding parameters<a class="headerlink" href="#understanding-parameters" title="Permanent link">&para;</a></h2>
+<h2 id="understanding-actions">Understanding actions<a class="headerlink" href="#understanding-actions" title="Permanent link">&para;</a></h2>
+<h2 id="using-rqt_console-to-view-logs">Using <code>rqt_console</code> to view logs<a class="headerlink" href="#using-rqt_console-to-view-logs" title="Permanent link">&para;</a></h2>
+<h2 id="launching-nodes">Launching nodes<a class="headerlink" href="#launching-nodes" title="Permanent link">&para;</a></h2>
+<h2 id="recording-and-playing-back-data">Recording and playing back data<a class="headerlink" href="#recording-and-playing-back-data" title="Permanent link">&para;</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+    
+  </body>
+</html>

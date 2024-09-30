@@ -1,8 +1,12 @@
 # System Requirement:
 
+This document may only works for you if your os is: 
+
 OS: Ubuntu 22.04
 
 # Prerequistes:
+
+Install Isaac-sim-4.0.0
 
 Install MkDocs and Necessary Plugins(pip)
 ```
@@ -25,5 +29,11 @@ mkdocs serve
 
 ```
 cd /isaac-ros
+mkdocs gh-deploy
+```
+# Made changes
+
+```
+mkdocs build
 mkdocs gh-deploy
 ```

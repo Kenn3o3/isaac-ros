@@ -1,6 +1,6 @@
 # Download ROS 2 Humble
 
-navigate to https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html
+[reference](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html)
 
 ### Set Locale
 
@@ -19,9 +19,7 @@ locale  # verify settings
 
 First ensure that the Ubuntu Universe repository is enabled.
 
-<div style="text-align: center;">
-    <img src="img/1.png" alt="drawing" width="600"/>
-</div>
+![Drawing](./img/1.png)
 
 ```
 sudo apt install software-properties-common

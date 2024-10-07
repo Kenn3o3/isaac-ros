@@ -1,4 +1,4 @@
-Navigate to my homepage: [https://Kenn3o3.github.com](https://Kenn3o3.github.com)
+Homepage: [https://Kenn3o3.github.io](https://Kenn3o3.github.io)
 
 # Isaac Sim ROS Documentation
 

@@ -887,6 +887,87 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Understanding nodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      Background
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Background">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-ros-2-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      The ROS 2 graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodes-in-ros-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nodes in ROS 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tasks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ros2-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      ros2 run
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remapping_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remapping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ros2-node-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      ros2 node info
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -895,6 +976,99 @@
       Understanding topics
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Understanding topics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#background_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Background
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tasks_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tasks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rqt_graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      rqt_graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ros2-topic-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      ros2 topic list
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ros2-topic-echo" class="md-nav__link">
+    <span class="md-ellipsis">
+      ros2 topic echo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ros2-topic-pub" class="md-nav__link">
+    <span class="md-ellipsis">
+      ros2 topic pub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ros2-interface-show" class="md-nav__link">
+    <span class="md-ellipsis">
+      ros2 interface show
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ros2-topic-hz" class="md-nav__link">
+    <span class="md-ellipsis">
+      ros2 topic hz
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1021,10 +1195,7 @@ turtlesim turtlesim_node
 <pre><code class="language-bash">ros2 run turtlesim turtlesim_node
 </code></pre>
 <p>What you are expected to see:</p>
-<div style="text-align: center;">
-    <img src="img/2.png" alt="drawing" width="300"/>
-</div>
-
+<p><img alt="Drawing" src="../img/2.png" /></p>
 <pre><code>[INFO] [turtlesim]: Starting turtlesim with node name /turtlesim
 [INFO] [turtlesim]: Spawning turtle [turtle1] at x=[5.544445], y=[5.544445], theta=[0.000000]
 </code></pre>
@@ -1046,19 +1217,13 @@ sudo apt install '~nros-humble-rqt*'
 </code></pre>
 <h3 id="use-rqt">Use rqt<a class="headerlink" href="#use-rqt" title="Permanent link">&para;</a></h3>
 <p>select <strong>Plugins</strong> &gt; <strong>Services</strong> &gt; <strong>Service Caller</strong> from the menu bar, you can call different services.</p>
-<div style="text-align: center;">
-    <img src="img/3.png" alt="drawing" width="500"/>
-</div>
-
+<p><img alt="Drawing" src="../img/3.png" /></p>
 <p><strong>Plugins</strong> &gt; <strong>Services</strong> &gt; <strong>Service Caller</strong></p>
 <h4 id="try-the-spawn-service">Try the spawn service<a class="headerlink" href="#try-the-spawn-service" title="Permanent link">&para;</a></h4>
 <p><strong>Select</strong> <code>/clear</code> then <strong>Call</strong> can clear the line drawn on turtlesim.</p>
 <p><strong>Select</strong> <code>/spawn</code> </p>
 <p>You can double click between the empty single quotes in the Expression column to give value to name, e.g., <code>Kenny</code></p>
-<div style="text-align: center;">
-    <img src="img/4.png" width="500">
-</div>
-
+<p><img alt="Drawing" src="../img/4.png" /></p>
 <p>You can change <code>x</code> and <code>y</code> to different value e.g. <code>1.0</code> and <code>1.0</code> so that the turtle will spawn in different lcoation.</p>
 <p><strong>Click</strong> Call, the turtle will then spawned in the turtlesim window. </p>
 <h4 id="try-the-set_pen-service">Try the set_pen service<a class="headerlink" href="#try-the-set_pen-service" title="Permanent link">&para;</a></h4>
@@ -1071,7 +1236,202 @@ sudo apt install '~nros-humble-rqt*'
 <p>Close the <code>turtlesim_node</code> terminal and the <code>turtle_teleop_key</code> terminals.</p>
 <h2 id="understanding-nodes">Understanding nodes<a class="headerlink" href="#understanding-nodes" title="Permanent link">&para;</a></h2>
 <p><a href="https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes.html#understanding-nodes">Reference</a></p>
+<h3 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h3>
+<h4 id="the-ros-2-graph">The ROS 2 graph<a class="headerlink" href="#the-ros-2-graph" title="Permanent link">&para;</a></h4>
+<p>The ROS graph is a network of ROS 2 elements processing data together at the same time. It encompasses all executables and the connections between them if you were to map them all out and visualize them.</p>
+<h4 id="nodes-in-ros-2">Nodes in ROS 2<a class="headerlink" href="#nodes-in-ros-2" title="Permanent link">&para;</a></h4>
+<p>Each node in ROS should be responsible for a single, modular purpose, e.g. controlling the wheel motors or publishing the sensor data from a laser range-finder. Each node can send and receive data from other nodes via topics, services, actions, or parameters.</p>
+<p><img alt="Nodes-TopicandService" src="../img/Nodes-TopicandService.gif" /></p>
+<h3 id="tasks">Tasks<a class="headerlink" href="#tasks" title="Permanent link">&para;</a></h3>
+<h4 id="ros2-run">ros2 run<a class="headerlink" href="#ros2-run" title="Permanent link">&para;</a></h4>
+<p>The command ros2 run launches an executable from a package.</p>
+<pre><code class="language-bash">ros2 run &lt;package_name&gt; &lt;executable_name&gt;
+</code></pre>
+<p>To run turtlesim, open a new terminal, and enter the following command in one terminal.</p>
+<pre><code class="language-bash">ros2 run turtlesim turtlesim_node
+</code></pre>
+<p>Open another new terminal and start the teleop node with the command:</p>
+<pre><code class="language-bash">ros2 run turtlesim turtle_teleop_key
+</code></pre>
+<p>Run the following command to see the node names:</p>
+<pre><code class="language-bash">ros2 node list
+</code></pre>
+<p>The terminal should output two active nodes by their names:</p>
+<pre><code>/teleop_turtle
+/turtlesim
+</code></pre>
+<h4 id="remapping_1">Remapping<a class="headerlink" href="#remapping_1" title="Permanent link">&para;</a></h4>
+<p>Remapping allows you to reassign default node properties, like node name, topic names, service names, etc.,</p>
+<p>To open a turtlesim with name <code>/my_turtle</code> instead of <code>/turtlesim</code>, in a new terminal:</p>
+<pre><code class="language-bash">ros2 run turtlesim turtlesim_node --ros-args --remap __node:=my_turtle
+</code></pre>
+<p>A new node named <code>my_turtle</code> is created, you can verify using <code>ros2 node list</code>.</p>
+<h4 id="ros2-node-info">ros2 node info<a class="headerlink" href="#ros2-node-info" title="Permanent link">&para;</a></h4>
+<p>To access more information about the nodes, e.g., <code>/my_turtle</code> node you just created.</p>
+<pre><code class="language-bash">ros2 node info /my_turtle
+</code></pre>
+<p>output:</p>
+<pre><code>/my_turtle
+  Subscribers:
+    /parameter_events: rcl_interfaces/msg/ParameterEvent
+    /turtle1/cmd_vel: geometry_msgs/msg/Twist
+  Publishers:
+    /parameter_events: rcl_interfaces/msg/ParameterEvent
+    /rosout: rcl_interfaces/msg/Log
+    /turtle1/color_sensor: turtlesim/msg/Color
+    /turtle1/pose: turtlesim/msg/Pose
+  Service Servers:
+    /clear: std_srvs/srv/Empty
+    /kill: turtlesim/srv/Kill
+    /my_turtle/describe_parameters: rcl_interfaces/srv/DescribeParameters
+    /my_turtle/get_parameter_types: rcl_interfaces/srv/GetParameterTypes
+    /my_turtle/get_parameters: rcl_interfaces/srv/GetParameters
+    /my_turtle/list_parameters: rcl_interfaces/srv/ListParameters
+    /my_turtle/set_parameters: rcl_interfaces/srv/SetParameters
+    /my_turtle/set_parameters_atomically: rcl_interfaces/srv/SetParametersAtomically
+    /reset: std_srvs/srv/Empty
+    /spawn: turtlesim/srv/Spawn
+    /turtle1/set_pen: turtlesim/srv/SetPen
+    /turtle1/teleport_absolute: turtlesim/srv/TeleportAbsolute
+    /turtle1/teleport_relative: turtlesim/srv/TeleportRelative
+  Service Clients:
+
+  Action Servers:
+    /turtle1/rotate_absolute: turtlesim/action/RotateAbsolute
+</code></pre>
+<p><code>ros2 node info</code> returns a list of subscribers, publishers, services, and actions. i.e. the ROS graph connections that interact with that node.</p>
+<p>If you have both <code>/my_turtle</code> node and <code>/turtlesim</code> node opened, then giving arrow commands on the <code>/teleop_turtle</code> node moves both two simulators.
+ros2 run turtlesim turtle_teleop_key</p>
 <h2 id="understanding-topics">Understanding topics<a class="headerlink" href="#understanding-topics" title="Permanent link">&para;</a></h2>
+<p><a href="https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html">Reference</a></p>
+<h3 id="background_1">Background<a class="headerlink" href="#background_1" title="Permanent link">&para;</a></h3>
+<p>ROS 2 breaks complex systems down into many modular nodes. Topics are a vital element of the ROS graph that act as a bus for nodes to exchange messages.</p>
+<p><img alt="Topic-SinglePublisherandSingleSubscriber" src="../img/Topic-SinglePublisherandSingleSubscriber.gif" /></p>
+<p>A node may publish data to any number of topics and simultaneously have subscriptions to any number of topics.</p>
+<p><img alt="Topic-MultiplePublisherandMultipleSubscriber" src="../img/Topic-MultiplePublisherandMultipleSubscriber.gif" /></p>
+<p>Topics are one of the main ways in which data is moved between nodes and therefore between different parts of the system.</p>
+<h3 id="tasks_1">Tasks<a class="headerlink" href="#tasks_1" title="Permanent link">&para;</a></h3>
+<h4 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h4>
+<p>Open a new terminal and create <code>/turtlesim</code> node:</p>
+<pre><code class="language-bash">ros2 run turtlesim turtlesim_node
+</code></pre>
+<p>Open another terminal and create <code>/teleop_turtle</code> node:</p>
+<pre><code class="language-bash">ros2 run turtlesim turtle_teleop_key
+</code></pre>
+<h4 id="rqt_graph">rqt_graph<a class="headerlink" href="#rqt_graph" title="Permanent link">&para;</a></h4>
+<p><code>rqt_graph</code> is used to visualize the changing nodes and topics, as well as the connections between them. Open a new terminal and enter the command:</p>
+<pre><code class="language-bash">rqt_graph
+</code></pre>
+<p>You can also open <code>rqt_graph</code> by opening <code>rqt</code> and selecting <strong>Plugins</strong> &gt; <strong>Introspection</strong> &gt; <strong>Node Graph</strong>.</p>
+<p>You should then see:</p>
+<p><img alt="Graph" src="../img/graph1.png" /></p>
+<p>Changing Top left corner to <code>Nodes/Topics (active)</code> and Groups to <code>0</code> so you can see:</p>
+<p><img alt="rqt_graph" src="../img/graph2.png" /></p>
+<p>It is showing how the <code>/turtlesim</code> ndoe and the <code>/teleop_turtle</code> node are communicating with each other over the <code>/turtle1/cmd_vel</code> topic</p>
+<h4 id="ros2-topic-list">ros2 topic list<a class="headerlink" href="#ros2-topic-list" title="Permanent link">&para;</a></h4>
+<p>Run the following command to see a list of all the active topics:</p>
+<pre><code class="language-bash">ros2 topic list 
+</code></pre>
+<p>output:</p>
+<pre><code>/parameter_events
+/rosout
+/turtle1/cmd_vel
+/turtle1/color_sensor
+/turtle1/pose
+</code></pre>
+<p><code>ros2 topic list -t</code> will return the same list of topics, with the <strong>topic type</strong> appended in brackets such as the below output:</p>
+<pre><code>/parameter_events [rcl_interfaces/msg/ParameterEvent]
+/rosout [rcl_interfaces/msg/Log]
+/turtle1/cmd_vel [geometry_msgs/msg/Twist]
+/turtle1/color_sensor [turtlesim/msg/Color]
+/turtle1/pose [turtlesim/msg/Pose]
+</code></pre>
+<p>The visualize the topics in the graph, uncheck all the boxes under <strong>Hide</strong>:</p>
+<p><img alt="rqt_graph" src="../img/graph3.png" /></p>
+<p>For now, though, checked back all those options to avoid confusion.</p>
+<h4 id="ros2-topic-echo">ros2 topic echo<a class="headerlink" href="#ros2-topic-echo" title="Permanent link">&para;</a></h4>
+<p>Use <code>ros2 topic echo &lt;topic_name&gt;</code> to see the data begin published on a topic, such as:</p>
+<pre><code class="language-bash">ros2 topic echo /turtle1/cmd_vel
+</code></pre>
+<p>Now you can move the turtle in turtlesim to see what is being echo-ed in the terminal. Such as below</p>
+<p><img alt="echo topic" src="../img/echo_topic.png" /></p>
+<p>Now return to rqt_graph and uncheck the <strong>Debug</strong> box under <strong>Hide</strong>.</p>
+<p><img alt="debug_graph" src="../img/debug_graph.png" /></p>
+<p>A new node <code>/_ros2cli_26814</code> created by the <code>echo</code> command we just ran is subscribed to the <code>/teleop_turtle</code> publisher over the <code>cmd_vel</code> topic just like <code>/turtlesim</code>.</p>
+<p>Another wait to look at this is to run the following command</p>
+<pre><code>ros2 topic info /turtle1/cmd_vel
+</code></pre>
+<p>which will return:</p>
+<pre><code>Type: geometry_msgs/msg/Twist
+Publisher count: 1
+Subscription count: 2
+</code></pre>
+<p>The topic type of <code>/turtle1/cmd_vel</code> is <code>geometry_msgs/msg/Twist</code> which means that in the package <code>geometry_msgs</code> there is a <code>msg</code> called <code>Twist</code>.</p>
+<p>Run <code>ros2 interface show geometry_msgs/msg/Twist</code> to learn the details of this type of topics.</p>
+<p>It outputs:</p>
+<pre><code># This expresses velocity in free space broken into its linear and angular parts.
+
+Vector3  linear
+    float64 x
+    float64 y
+    float64 z
+Vector3  angular
+    float64 x
+    float64 y
+    float64 z
+</code></pre>
+<p>Which is the same structure as what is echoed in the screenshot above.
+This tells you that the <code>/turtlesim node</code> is expecting a message with two vectors, <code>linear</code> and <code>angular</code>, of three elements each. </p>
+<h4 id="ros2-topic-pub">ros2 topic pub<a class="headerlink" href="#ros2-topic-pub" title="Permanent link">&para;</a></h4>
+<p>Now you hcan publish data to a topic directly from the command line using:</p>
+<pre><code class="language-bash">ros2 topic pub &lt;topic_name&gt; &lt;msg_type&gt; '&lt;args&gt;'
+</code></pre>
+<p>For exmaple, you can run the below to make the turtle draws a circle</p>
+<pre><code class="language-bash">ros2 topic pub /turtle1/cmd_vel geometry_msgs/msg/Twist &quot;{linear: {x: 2.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 1.8}}&quot;
+</code></pre>
+<p>You can see your turtle moving like:</p>
+<p><img alt="demo" src="../img/demo_circle.png" /></p>
+<h4 id="ros2-interface-show">ros2 interface show<a class="headerlink" href="#ros2-interface-show" title="Permanent link">&para;</a></h4>
+<p><strong>Nodes</strong> send data over <strong>topics</strong> using messages. <strong>Publishers</strong> and <strong>Subscribers</strong> must send and receive the same type of message to communicate.</p>
+<p>Refresh rqt_graph. Now you can see that the ros2 topic pub 
+<img alt="rqt graph" src="../img/graph5.png" /></p>
+<p>You can see that another ros2cli node is publishing over the <code>/turtle1/cmd_vel</code> topic.</p>
+<p>Run <code>echo</code> on the <code>pose</code> topic and rechecck rqt_graph:</p>
+<pre><code>ros2 topic echo /turtle1/pose
+</code></pre>
+<p>output:</p>
+<pre><code>---
+x: 4.457859516143799
+y: 6.952967166900635
+theta: -1.8562328815460205
+linear_velocity: 2.0
+angular_velocity: 1.7999999523162842
+---
+x: 4.449737071990967
+y: 6.922015190124512
+theta: -1.8274328708648682
+linear_velocity: 2.0
+angular_velocity: 1.7999999523162842
+---
+...
+</code></pre>
+<p>rqt Graph:</p>
+<p><img alt="rqt graph" src="../img/graph6.png" /></p>
+<p>When publishing messages with timestamps, <code>pub</code> has two methods to automatically fill them out with the current time. For messages with a <code>std_msgs/msg/Header</code>, the header field can be set to <code>auto</code> to fill out the <code>stamp</code> field.</p>
+<pre><code>ros2 topic pub /pose geometry_msgs/msg/PoseStamped '{header: &quot;auto&quot;, pose: {position: {x: 1.0, y: 2.0, z: 3.0}}}'
+</code></pre>
+<p>If the message does not use a full header, but just has a field with type <code>builtin_interfaces/msg/Time</code>, that can be set to the value <code>now</code>.</p>
+<pre><code>ros2 topic pub /reference sensor_msgs/msg/TimeReference '{header: &quot;auto&quot;, time_ref: &quot;now&quot;, source: &quot;dumy&quot;}'
+</code></pre>
+<h4 id="ros2-topic-hz">ros2 topic hz<a class="headerlink" href="#ros2-topic-hz" title="Permanent link">&para;</a></h4>
+<p>For one last introspection on this process, you can view the rate at which data is published using:</p>
+<pre><code>ros2 topic hz /turtle1/pose
+</code></pre>
+<p>It will return data on the rate at which the <code>/turtlesim</code> node is publishing data to the <code>pose</code> topic.</p>
+<pre><code>average rate: 59.354
+  min: 0.005s max: 0.027s std dev: 0.00284s window: 58
+</code></pre>
+<p>Recall that you set the rate of <code>turtle1/cmd_vel</code> to publish at a steady 1 Hz using <code>ros2 topic pub --rate 1</code>. If you run the above command with <code>turtle1/cmd_vel</code> instead of <code>turtle1/pose</code>, you will see an average reflecting that rate.</p>
 <h2 id="understanding-services">Understanding services<a class="headerlink" href="#understanding-services" title="Permanent link">&para;</a></h2>
 <h2 id="understanding-parameters">Understanding parameters<a class="headerlink" href="#understanding-parameters" title="Permanent link">&para;</a></h2>
 <h2 id="understanding-actions">Understanding actions<a class="headerlink" href="#understanding-actions" title="Permanent link">&para;</a></h2>

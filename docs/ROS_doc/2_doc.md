@@ -494,6 +494,11 @@ Recall that you set the rate of `turtle1/cmd_vel` to publish at a steady 1 Hz us
 
 ## Understanding services
 
+[Reference](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Services/Understanding-ROS2-Services.html)
+
+### Background
+
+
 
 ## Understanding parameters
 

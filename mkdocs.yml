@@ -2,6 +2,31 @@ site_name: ISAAC-ROS AND ROS 2 Documentation
 site_url: https://Kenn3o3.github.io/isaac-ros/  # Update this if deploying to GitHub Pages
 theme:
   name: material  # Change to 'mkdocs' if not using Material theme
+  logo: assets/icon.png
+  favicon: assets/icon.png
+  palette:
+    primary: green
+    # Palette toggle for automatic mode
+    # media: "(prefers-color-scheme)"
+    # toggle:
+    #   icon: material/brightness-auto
+    #   name: Switch to light mode
+
+  # Palette toggle for light mode
+    # media: "(prefers-color-scheme: light)"
+    # scheme: default 
+
+
+    # toggle:
+    #   icon: material/brightness-7
+    #   name: Switch to dark mode
+
+  # Palette toggle for dark mode
+    # media: "(prefers-color-scheme: dark)"
+    # scheme: slate
+    # toggle:
+    #   icon: material/brightness-4
+    #   name: Switch to system preference
 nav:
   - Home: index.md
   - Isaac Sim ROS Documentation:
@@ -27,3 +52,5 @@ nav:
 markdown_extensions:
   - toc:
       permalink: true
+extra_javascript:
+  - js/theme-switcher.js

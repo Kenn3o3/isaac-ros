@@ -41,7 +41,7 @@ The *Camera Helper* Node is abstracting a complex postprocessing network from th
 
 ![alt text](img/3.png)
 
-## Depth and other Perception Ground Truth data
+## Depth and other Perception Ground Truth data
 
 In addition to RGB image, the following synthetic sensor and perceptual information also are available for any camera. To see the units used for each synthetic data annotator refer to [omni.replicator](https://docs.omniverse.nvidia.com/extensions/latest/ext_replicator/annotators_details.html).
 

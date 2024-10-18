@@ -44,6 +44,10 @@ Run `export FASTRTPS_DEFAULT_PROFILES_FILE=~/.ros/fastdds.xml` in the terminals 
 
 Source your ROS 2 installation and workspace before launching Isaac Sim.
 
+Btw, remember to install NUCLEUS using Add Local Nucleus Service.
+
+![alt text](9.png)
+
 ### Enable Extension
 
 Omniverse-launcher > Library > Isaac Sim > Window > Extensions > search `ros*_bridge` and enable one.

@@ -930,9 +930,13 @@ Create a file called <code>.isaac_ros_common-config</code> with the following co
 </span></code></pre></div>
 <p>Outside of the container (on the host), open a new terminal and ensure ROS is installed and that the <strong>Isaac Sim Workspace</strong> is sourced. Additionally, source the <code>nova_carter_description</code> package workspace in a new terminal. Then, run the ~carter_navigation~ launch file</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>source ${ISAAC_ROS_WS}/install/setup.bash
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>run the ~carter_navigation~ launch file
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>ros2 launch carter_navigation carter_navigation.launch.py
 </span></code></pre></div>
 <p>The robot model is automatically loaded in the scene in Rviz.</p>
+<p>If want to replace a occupancy map:</p>
+<p>use <code>docker ps</code> to check docker id. e.g., a2e2bd586226</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>docker cp $ISAAC_ROS_WS/src/navigation/carter_navigation/maps/carter_warehouse_navigation.png a2e2bd586226:/workspaces/isaac_ros-dev/src/navigation/carter_navigation/maps/carter_warehouse_navigation.png
+</span></code></pre></div>
 <p>Sending Goals Programmatically:</p>
 <p>The isaac_ros_navigation_goal ROS2 package can be used to set goal poses for the robot using a python node. It is able to randomly generate and send goal poses to Nav2. It is also able to send user-defined goal poses if needed.</p>
 <p>Others:</p>

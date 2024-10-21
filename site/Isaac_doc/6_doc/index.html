@@ -14,7 +14,7 @@
         <link rel="prev" href="../5_doc/">
       
       
-        <link rel="next" href="../../ROS_doc/1_doc/">
+        <link rel="next" href="../7_doc/">
       
       
       <link rel="icon" href="../../assets/icon.png">
@@ -433,6 +433,111 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7_doc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RTX Lidar Sensors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8_doc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ROS2 Transform Trees and Odometry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9_doc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setting Publish Rates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_doc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ROS2 Quality of Service (QoS)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_doc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ROS2 Navigation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -817,7 +922,37 @@
 
 <h1 id="ros2-clock">ROS2 Clock<a class="headerlink" href="#ros2-clock" title="Permanent link">&para;</a></h1>
 <p><a href="https://docs.omniverse.nvidia.com/isaacsim/latest/ros2_tutorials/tutorial_ros2_clock.html">Reference</a></p>
+<p>In order for external ROS2 nodes to synchronize with simulation time, a clock topic is usually used. Many ROS2 nodes such as RViz2 use the parameter use_sim_time which if set to True will indicate to the node to begin subscribing to the /clock topic and synchronizing to the published simulation time.</p>
+<p>You can either set this parameter in a ROS2 launch file or set the parameter using the following command in a new ROS2-sourced terminal:</p>
+<pre><code>ros2 param set /node_name use_sim_time true
+</code></pre>
+<p>Make sure to replace /node_name with whatever node you are currently running. If setting using the terminal, the node must already be running first before setting the parameter.
+<img alt="alt text" src="../img/5.png" /></p>
+<p>Start RViz in a new ROS2-sourced terminal.</p>
+<pre><code>ros2 run rviz2 rviz2
+</code></pre>
+<p>In a new ROS2-sourced terminal set the use_sim_time parameter to true for the RViz node. Ensure that simulation is stopped in Isaac Sim.</p>
+<pre><code>ros2 param set /rviz use_sim_time true
+</code></pre>
+<p>In Isaac Sim click Play.</p>
+<p>In RViz, the ROS Time is now identical to the simulation time published from Isaac Sim over the /clock topic.</p>
+<p><img alt="alt text" src="../img/6.png" /></p>
+<pre><code>ros2 topic echo /clock
+</code></pre>
+<p><img alt="alt text" src="../img/7.png" /></p>
+<p>Camera Helper and RTX Lidar nodes</p>
+<p>You have already seen the ROS2 Camera Helper node in a previous tutorial and you will see the ROS2 RTX Lidar Helper node in a following tutorial. As both of these nodes automatically generate a sensor publishing pipeline, to use system timestamps for their publishers, ensure that their <code>useSystemTime</code> input is set to True.</p>
+<p>Now try:</p>
+<p>1.</p>
+<p><img alt="alt text" src="../img/8.png" /></p>
+<p>2</p>
+<pre><code>ros2 topic pub -t 1 /clock rosgraph_msgs/Clock &quot;clock: {sec: 1, nanosec: 200000000 }&quot;
+</code></pre>
+<p>The timeStamp value in the ROS2 Subscribe Clock OmniGraph node should change to 1.2.</p>
+<p>Change the previous command with different sec and nanosec values to see those values being reflected in the timeStamp field of the ROS2 Subscribe Clock OmniGraph node.</p>
+<p>We provide a menu shortcut to build a clock graph within just a few clicks. Go to Isaac Utils &gt; Common Omnigraphs &gt; ROS2 Clock. (If you don’t see any ROS2 graphs listed, you need to first enable the ROS2 bridge). A popup box will appear asking for the parameters needed to populate the graphs. Provide the graph path and click “OK”, a graph publishing the simulated clock should appear on the stage.</p>
 <h2 id="next-step">Next Step<a class="headerlink" href="#next-step" title="Permanent link">&para;</a></h2>
+<p><a href="../7_doc/">RTX Lidar Sensors</a></p>
 <h2 id="previous-step">Previous Step<a class="headerlink" href="#previous-step" title="Permanent link">&para;</a></h2>
 <p><a href="../5_doc/">Publishing Camera’s Data</a></p>
 <p><a href="../4_doc/">ROS 2 Cameras</a></p>

@@ -43,19 +43,16 @@ nav:
       - ROS2 Navigation: Isaac_doc/11_doc.md
   - ROS 2 Humble Documentation:
       - Installation: ROS_doc/1_doc.md
-      - CLI tools:
-          - Configuring environment: ROS_doc/2_doc.md#configuring-environment
-          - Using `turtlesim`, `ros2`, and `rpt`: ROS_doc/2_doc.md#using-turtlesim-ros2-and-rpt
-          - Understanding nodes: ROS_doc/2_doc.md#understanding-nodes
-          - Understanding topics: ROS_doc/2_doc.md#understanding-topics
-          - Understanding services: ROS_doc/2_doc.md#understanding-services
-          - Understanding parameters: ROS_doc/2_doc.md#understanding-parameters
-          - Understanding actions: ROS_doc/2_doc.md#understanding-actions
-          - Using `rqt_console` to view logs: ROS_doc/2_doc.md#using-rqt_console-to-view-logs
-          - Launching nodes: ROS_doc/2_doc.md#launching-nodes
-          - Recording and playing back data: ROS_doc/2_doc.md#recording-and-playing-back-data
+      - CLI tools: ROS_doc/2_doc.md
 markdown_extensions:
   - toc:
       permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
 extra_javascript:
   - js/theme-switcher.js

@@ -607,248 +607,16 @@
   
   
   
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
+    <li class="md-nav__item">
+      <a href="../../ROS_doc/2_doc/" class="md-nav__link">
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
-            
   
   <span class="md-ellipsis">
     CLI tools
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2">
-            <span class="md-nav__icon md-icon"></span>
-            CLI tools
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#configuring-environment" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Configuring environment
-  </span>
-  
-
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#using-turtlesim-ros2-and-rpt" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Using `turtlesim`, `ros2`, and `rpt`
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#understanding-nodes" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Understanding nodes
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#understanding-topics" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Understanding topics
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#understanding-services" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Understanding services
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#understanding-parameters" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Understanding parameters
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#understanding-actions" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Understanding actions
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#using-rqt_console-to-view-logs" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Using `rqt_console` to view logs
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#launching-nodes" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Launching nodes
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#recording-and-playing-back-data" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Recording and playing back data
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -924,21 +692,21 @@
 <p><a href="https://docs.omniverse.nvidia.com/isaacsim/latest/ros2_tutorials/tutorial_ros2_clock.html">Reference</a></p>
 <p>In order for external ROS2 nodes to synchronize with simulation time, a clock topic is usually used. Many ROS2 nodes such as RViz2 use the parameter use_sim_time which if set to True will indicate to the node to begin subscribing to the /clock topic and synchronizing to the published simulation time.</p>
 <p>You can either set this parameter in a ROS2 launch file or set the parameter using the following command in a new ROS2-sourced terminal:</p>
-<pre><code>ros2 param set /node_name use_sim_time true
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ros2 param set /node_name use_sim_time true
+</span></code></pre></div>
 <p>Make sure to replace /node_name with whatever node you are currently running. If setting using the terminal, the node must already be running first before setting the parameter.
 <img alt="alt text" src="../img/5.png" /></p>
 <p>Start RViz in a new ROS2-sourced terminal.</p>
-<pre><code>ros2 run rviz2 rviz2
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ros2 run rviz2 rviz2
+</span></code></pre></div>
 <p>In a new ROS2-sourced terminal set the use_sim_time parameter to true for the RViz node. Ensure that simulation is stopped in Isaac Sim.</p>
-<pre><code>ros2 param set /rviz use_sim_time true
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ros2 param set /rviz use_sim_time true
+</span></code></pre></div>
 <p>In Isaac Sim click Play.</p>
 <p>In RViz, the ROS Time is now identical to the simulation time published from Isaac Sim over the /clock topic.</p>
 <p><img alt="alt text" src="../img/6.png" /></p>
-<pre><code>ros2 topic echo /clock
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ros2 topic echo /clock
+</span></code></pre></div>
 <p><img alt="alt text" src="../img/7.png" /></p>
 <p>Camera Helper and RTX Lidar nodes</p>
 <p>You have already seen the ROS2 Camera Helper node in a previous tutorial and you will see the ROS2 RTX Lidar Helper node in a following tutorial. As both of these nodes automatically generate a sensor publishing pipeline, to use system timestamps for their publishers, ensure that their <code>useSystemTime</code> input is set to True.</p>
@@ -946,8 +714,8 @@
 <p>1.</p>
 <p><img alt="alt text" src="../img/8.png" /></p>
 <p>2</p>
-<pre><code>ros2 topic pub -t 1 /clock rosgraph_msgs/Clock &quot;clock: {sec: 1, nanosec: 200000000 }&quot;
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ros2 topic pub -t 1 /clock rosgraph_msgs/Clock &quot;clock: {sec: 1, nanosec: 200000000 }&quot;
+</span></code></pre></div>
 <p>The timeStamp value in the ROS2 Subscribe Clock OmniGraph node should change to 1.2.</p>
 <p>Change the previous command with different sec and nanosec values to see those values being reflected in the timeStamp field of the ROS2 Subscribe Clock OmniGraph node.</p>
 <p>We provide a menu shortcut to build a clock graph within just a few clicks. Go to Isaac Utils &gt; Common Omnigraphs &gt; ROS2 Clock. (If you don’t see any ROS2 graphs listed, you need to first enable the ROS2 bridge). A popup box will appear asking for the parameters needed to populate the graphs. Provide the graph path and click “OK”, a graph publishing the simulated clock should appear on the stage.</p>

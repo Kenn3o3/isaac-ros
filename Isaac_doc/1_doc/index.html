@@ -631,248 +631,16 @@
   
   
   
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
+    <li class="md-nav__item">
+      <a href="../../ROS_doc/2_doc/" class="md-nav__link">
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
-            
   
   <span class="md-ellipsis">
     CLI tools
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2">
-            <span class="md-nav__icon md-icon"></span>
-            CLI tools
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#configuring-environment" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Configuring environment
-  </span>
-  
-
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#using-turtlesim-ros2-and-rpt" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Using `turtlesim`, `ros2`, and `rpt`
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#understanding-nodes" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Understanding nodes
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#understanding-topics" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Understanding topics
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#understanding-services" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Understanding services
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#understanding-parameters" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Understanding parameters
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#understanding-actions" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Understanding actions
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#using-rqt_console-to-view-logs" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Using `rqt_console` to view logs
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#launching-nodes" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Launching nodes
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#recording-and-playing-back-data" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Recording and playing back data
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -974,34 +742,34 @@
 <p>Navigate to <a href="../../ROS_doc/1_doc/">ROS 2 Installation Documentation</a> to install ROS 2.</p>
 <p>ROS 2 can be sourced before Isaac Sim is run, allowing Isaac Sim ROS2 bridge to load the ROS2 libraries of your system.</p>
 <h2 id="enabling-the-ros-bridge-extension">Enabling the ROS Bridge Extension<a class="headerlink" href="#enabling-the-ros-bridge-extension" title="Permanent link">&para;</a></h2>
-<p>Create a file named <code>fastdds.xml</code> under <code>~/.ros/</code>:</p>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
-
-&lt;license&gt;Copyright (c) 2022-2024, NVIDIA CORPORATION.  All rights reserved.
-NVIDIA CORPORATION and its licensors retain all intellectual property
-and proprietary rights in and to this software, related documentation
-and any modifications thereto.  Any use, reproduction, disclosure or
-distribution of this software and related documentation without an express
-license agreement from NVIDIA CORPORATION is strictly prohibited.&lt;/license&gt;
-
-&lt;profiles xmlns=&quot;http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles&quot; &gt;
-    &lt;transport_descriptors&gt;
-        &lt;transport_descriptor&gt;
-            &lt;transport_id&gt;UdpTransport&lt;/transport_id&gt;
-            &lt;type&gt;UDPv4&lt;/type&gt;
-        &lt;/transport_descriptor&gt;
-    &lt;/transport_descriptors&gt;
-
-    &lt;participant profile_name=&quot;udp_transport_profile&quot; is_default_profile=&quot;true&quot;&gt;
-        &lt;rtps&gt;
-            &lt;userTransports&gt;
-                &lt;transport_id&gt;UdpTransport&lt;/transport_id&gt;
-            &lt;/userTransports&gt;
-            &lt;useBuiltinTransports&gt;false&lt;/useBuiltinTransports&gt;
-        &lt;/rtps&gt;
-    &lt;/participant&gt;
-&lt;/profiles&gt;
-</code></pre>
+<p>Create a file named <code>fastdds.xml</code> under <code>~/.ros/</code>:
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">&lt;license&gt;</span>Copyright<span class="w"> </span>(c)<span class="w"> </span>2022-2024,<span class="w"> </span>NVIDIA<span class="w"> </span>CORPORATION.<span class="w">  </span>All<span class="w"> </span>rights<span class="w"> </span>reserved.
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>NVIDIA<span class="w"> </span>CORPORATION<span class="w"> </span>and<span class="w"> </span>its<span class="w"> </span>licensors<span class="w"> </span>retain<span class="w"> </span>all<span class="w"> </span>intellectual<span class="w"> </span>property
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>and<span class="w"> </span>proprietary<span class="w"> </span>rights<span class="w"> </span>in<span class="w"> </span>and<span class="w"> </span>to<span class="w"> </span>this<span class="w"> </span>software,<span class="w"> </span>related<span class="w"> </span>documentation
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>and<span class="w"> </span>any<span class="w"> </span>modifications<span class="w"> </span>thereto.<span class="w">  </span>Any<span class="w"> </span>use,<span class="w"> </span>reproduction,<span class="w"> </span>disclosure<span class="w"> </span>or
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>distribution<span class="w"> </span>of<span class="w"> </span>this<span class="w"> </span>software<span class="w"> </span>and<span class="w"> </span>related<span class="w"> </span>documentation<span class="w"> </span>without<span class="w"> </span>an<span class="w"> </span>express
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>license<span class="w"> </span>agreement<span class="w"> </span>from<span class="w"> </span>NVIDIA<span class="w"> </span>CORPORATION<span class="w"> </span>is<span class="w"> </span>strictly<span class="w"> </span>prohibited.<span class="nt">&lt;/license&gt;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="nt">&lt;profiles</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles&quot;</span><span class="w"> </span><span class="nt">&gt;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&lt;transport_descriptors&gt;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="nt">&lt;transport_descriptor&gt;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">            </span><span class="nt">&lt;transport_id&gt;</span>UdpTransport<span class="nt">&lt;/transport_id&gt;</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">            </span><span class="nt">&lt;type&gt;</span>UDPv4<span class="nt">&lt;/type&gt;</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="nt">&lt;/transport_descriptor&gt;</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nt">&lt;/transport_descriptors&gt;</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="nt">&lt;participant</span><span class="w"> </span><span class="na">profile_name=</span><span class="s">&quot;udp_transport_profile&quot;</span><span class="w"> </span><span class="na">is_default_profile=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">        </span><span class="nt">&lt;rtps&gt;</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">            </span><span class="nt">&lt;userTransports&gt;</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">                </span><span class="nt">&lt;transport_id&gt;</span>UdpTransport<span class="nt">&lt;/transport_id&gt;</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">            </span><span class="nt">&lt;/userTransports&gt;</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">            </span><span class="nt">&lt;useBuiltinTransports&gt;</span>false<span class="nt">&lt;/useBuiltinTransports&gt;</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">        </span><span class="nt">&lt;/rtps&gt;</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">    </span><span class="nt">&lt;/participant&gt;</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="nt">&lt;/profiles&gt;</span>
+</span></code></pre></div></p>
 <p>Run <code>export FASTRTPS_DEFAULT_PROFILES_FILE=~/.ros/fastdds.xml</code> in the terminals that will use ROS 2 functions . You must also set it under ~Extra Args" when launching Isaac Sim from the Nucleus Launcher.</p>
 <p>Source your ROS 2 installation and workspace before launching Isaac Sim.</p>
 <p>Btw, remember to install NUCLEUS using Add Local Nucleus Service.</p>
@@ -1014,108 +782,82 @@ license agreement from NVIDIA CORPORATION is strictly prohibited.&lt;/license&gt
 
 Install Rocker
 
-
-<pre><code class="language-bash">sudo apt-get install python3-rocker
-</code></pre>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>python3-rocker
+</span></code></pre></div>
 
 Start the ROS container using Rocker.
 
-
-<pre><code class="language-bash">rocker --nvidia --x11 --privileged --network host  --name &lt;container name&gt; osrf/ros:humble-desktop-full-jammy
-``` --&gt;
-
-&lt;!-- Clone the Isaac Sim ROS Workspace Repository from https://github.com/isaac-sim/IsaacSim-ros_workspaces.
-
-```bash
-git clone https://github.com/isaac-sim/IsaacSim-ros_workspaces.git
-cd IsaacSim-ros_workspaces
-cd humble_ws
-</code></pre>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>rocker<span class="w"> </span>--nvidia<span class="w"> </span>--x11<span class="w"> </span>--privileged<span class="w"> </span>--network<span class="w"> </span>host<span class="w">  </span>--name<span class="w"> </span>&lt;container<span class="w"> </span>name&gt;<span class="w"> </span>osrf/ros:humble-desktop-full-jammy
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="sb">```</span><span class="w"> </span>--&gt;
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>&lt;!--<span class="w"> </span>Clone<span class="w"> </span>the<span class="w"> </span>Isaac<span class="w"> </span>Sim<span class="w"> </span>ROS<span class="w"> </span>Workspace<span class="w"> </span>Repository<span class="w"> </span>from<span class="w"> </span>https://github.com/isaac-sim/IsaacSim-ros_workspaces.
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="sb">```</span>bash
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/isaac-sim/IsaacSim-ros_workspaces.git
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="nb">cd</span><span class="w"> </span>IsaacSim-ros_workspaces
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nb">cd</span><span class="w"> </span>humble_ws
+</span></code></pre></div>
 
 Set the environment variable for `fastdds.xml`. **You must also set it under “Extra Args” when launching Isaac Sim from the NVIDIA Omniverse Launcher.** 
-
-<pre><code class="language-bash">export FASTRTPS_DEFAULT_PROFILES_FILE=/home/user1/Desktop/isaac_ros_git/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
-``` --&gt;
-
-&lt;!-- Running ROS2 Bridge using Cyclone DDS: --&gt;
-
-&lt;!-- Follow [Cyclone DDS Installation](../ROS_doc/Cyclone_DDS.md) --&gt;
-
-&lt;!-- Before Running Isaac Sim, make sure to set the `RMW_IMPLEMENTATION` environment variable as shown below. 
-```bash
-export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-</code></pre>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">FASTRTPS_DEFAULT_PROFILES_FILE</span><span class="o">=</span>/home/user1/Desktop/isaac_ros_git/IsaacSim-ros_workspaces/humble_ws/fastdds.xml
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="sb">```</span><span class="w"> </span>--&gt;
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>&lt;!--<span class="w"> </span>Running<span class="w"> </span>ROS2<span class="w"> </span>Bridge<span class="w"> </span>using<span class="w"> </span>Cyclone<span class="w"> </span>DDS:<span class="w"> </span>--&gt;
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>&lt;!--<span class="w"> </span>Follow<span class="w"> </span><span class="o">[</span>Cyclone<span class="w"> </span>DDS<span class="w"> </span>Installation<span class="o">](</span>../ROS_doc/Cyclone_DDS.md<span class="o">)</span><span class="w"> </span>--&gt;
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>&lt;!--<span class="w"> </span>Before<span class="w"> </span>Running<span class="w"> </span>Isaac<span class="w"> </span>Sim,<span class="w"> </span>make<span class="w"> </span>sure<span class="w"> </span>to<span class="w"> </span><span class="nb">set</span><span class="w"> </span>the<span class="w"> </span><span class="sb">`</span>RMW_IMPLEMENTATION<span class="sb">`</span><span class="w"> </span>environment<span class="w"> </span>variable<span class="w"> </span>as<span class="w"> </span>shown<span class="w"> </span>below.<span class="w"> </span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="sb">```</span>bash
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="nb">export</span><span class="w"> </span><span class="nv">RMW_IMPLEMENTATION</span><span class="o">=</span>rmw_cyclonedds_cpp
+</span></code></pre></div>
 
 Source your native ROS 2 workspace (if not sourced yet).
 
-
-<pre><code class="language-bash">source /opt/ros/humble/setup.bash
-</code></pre>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">source</span><span class="w"> </span>/opt/ros/humble/setup.bash
+</span></code></pre></div>
 
 Install additional packages.
 
-
-<pre><code class="language-bash"># For rosdep install command
-sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
-# For colcon build command
-sudo apt install python3-colcon-common-extensions
-</code></pre>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># For rosdep install command</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-rosdep<span class="w"> </span>python3-rosinstall<span class="w"> </span>python3-rosinstall-generator<span class="w"> </span>python3-wstool<span class="w"> </span>build-essential
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># For colcon build command</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-colcon-common-extensions
+</span></code></pre></div>
 
 Resolve any package dependencies from the root of the ROS 2 workspace.
 
-
-<pre><code class="language-bash"># cd humble_ws
-rosdep install -i --from-path src --rosdistro humble -y
-</code></pre>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># cd humble_ws</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>rosdep<span class="w"> </span>install<span class="w"> </span>-i<span class="w"> </span>--from-path<span class="w"> </span>src<span class="w"> </span>--rosdistro<span class="w"> </span>humble<span class="w"> </span>-y
+</span></code></pre></div>
 
 Install Docker. Check if docker is installed.
 
-
-<pre><code class="language-bash">docker --version
-</code></pre>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker<span class="w"> </span>--version
+</span></code></pre></div>
 
 Install Docker if it is not installed yet.
 
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</span></code></pre></div>
 
-<pre><code class="language-bash">sudo apt update
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>apt-transport-https<span class="w"> </span>ca-certificates<span class="w"> </span>curl<span class="w"> </span>software-properties-common
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://download.docker.com/linux/ubuntu/gpg<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>apt-key<span class="w"> </span>add<span class="w"> </span>-
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>sudo<span class="w"> </span>add-apt-repository<span class="w"> </span><span class="s2">&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu </span><span class="k">$(</span>lsb_release<span class="w"> </span>-cs<span class="k">)</span><span class="s2"> stable&quot;</span>
+</span></code></pre></div>
 
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</span></code></pre></div>
 
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>apt-cache<span class="w"> </span>policy<span class="w"> </span>docker-ce
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>docker-ce
+</span></code></pre></div>
 
-<pre><code class="language-bash">sudo apt install apt-transport-https ca-certificates curl software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&quot;
-</code></pre>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w"> </span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>su<span class="w"> </span>-<span class="w"> </span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span>
+</span></code></pre></div>
 
-
-
-<pre><code class="language-bash">sudo apt update
-</code></pre>
-
-
-
-<pre><code class="language-bash">apt-cache policy docker-ce
-sudo apt install docker-ce
-</code></pre>
-
-
-
-<pre><code class="language-bash">sudo usermod -aG docker ${USER}
-su - ${USER}
-</code></pre>
-
-
-
-<pre><code class="language-bash">docker --version
-</code></pre>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>docker<span class="w"> </span>--version
+</span></code></pre></div>
 
 Build the workspace.
 

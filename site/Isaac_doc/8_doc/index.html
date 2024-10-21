@@ -607,248 +607,16 @@
   
   
   
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
+    <li class="md-nav__item">
+      <a href="../../ROS_doc/2_doc/" class="md-nav__link">
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
-            
   
   <span class="md-ellipsis">
     CLI tools
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2">
-            <span class="md-nav__icon md-icon"></span>
-            CLI tools
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#configuring-environment" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Configuring environment
-  </span>
-  
-
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#using-turtlesim-ros2-and-rpt" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Using `turtlesim`, `ros2`, and `rpt`
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#understanding-nodes" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Understanding nodes
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#understanding-topics" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Understanding topics
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#understanding-services" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Understanding services
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#understanding-parameters" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Understanding parameters
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#understanding-actions" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Understanding actions
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#using-rqt_console-to-view-logs" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Using `rqt_console` to view logs
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#launching-nodes" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Launching nodes
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ROS_doc/2_doc.md#recording-and-playing-back-data" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Recording and playing back data
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -921,6 +689,77 @@
 
 
 <h1 id="ros2-transform-trees-and-odometry">ROS2 Transform Trees and Odometry<a class="headerlink" href="#ros2-transform-trees-and-odometry" title="Permanent link">&para;</a></h1>
+<p><a href="https://docs.omniverse.nvidia.com/isaacsim/latest/ros2_tutorials/tutorial_ros2_tf.html">Reference</a></p>
+<p>Assuming you’ve already gone through the ROS2 camera tutorial and have two cameras on stage already, let’s add those cameras to a TF tree, so that we can track the camera’s position in the global frame.</p>
+<p><img alt="alt text" src="../image.png" /></p>
+<p>Add two cameras and add to target targetPrims:</p>
+<p><img alt="alt text" src="../image-1.png" /></p>
+<p>run in terminal: <code>ros2 topic echo /tf</code></p>
+<p>if you shift and drag around the robot, the values change
+<img alt="alt text" src="../image-2.png" /></p>
+<p><strong>Articulation Transforms</strong></p>
+<p>To get the transforms of each linkage on an articulated robot, add the robot’s articulation root to the targetPrims field. All the linkages subsequent to the articulation root will be published automatically. Add /World/turtlebot3_burger to the targetPrims field, and see that the transforms of all the links of the robot, fixed or articulated, will be published on the /tf topic.</p>
+<p><strong>Publish Relative Transforms</strong></p>
+<p>By default, the transforms are in reference to the <code>world frame</code>. You can check that the <code>/base_link</code> transform of the Turtlebot is published relative to the /World. If you wish to get the transforms relative to something else, such as a camera, make sure to indicate that in the <code>parentPrim</code> field. Add <code>Camera_1</code> in the parentPrim field, Stop and Play the simulation between property changes, and you can see that the /base_link transform is now relative to <code>Camera_1</code>.</p>
+<p><strong>Setting up Odometry</strong>
+To setup odometry for a robot, we would need to publish the odometry ROS message as well as its corresponding transforms.</p>
+<p><img alt="alt text" src="../image-4.png" /></p>
+<p>In the Property tab for the <strong>Isaac Compute Odometry</strong> Node:</p>
+<ul>
+<li>Add the Turtlebot prim (ie. <code>/World/turtlebot3_burger</code>) to its Chassis Prim input field. This node calculates the position of the robot relative to its start location. Its output will be fed into both a publisher for the <code>/odom</code> Rostopic, and a TF publisher that publishes the singular transform from <code>/odom</code> frame to <code>/base_link</code> frame.</li>
+</ul>
+<p>In the Property tab for the <strong>ROS2 Publish Raw Transform Tree</strong> node:</p>
+<ul>
+<li>
+<p>Set the childFrameId input field to <code>base_link</code>.</p>
+</li>
+<li>
+<p>Set the parentFrameId input field to <code>odom</code>. This will now enable publishing odom -&gt; base_link frames in the TF tree.</p>
+</li>
+</ul>
+<p>In the Property tab for the <strong>ROS2 Publish Odometry</strong> node:</p>
+<ul>
+<li>
+<p>Set the chassisFrameId input field to <code>base_link</code>.</p>
+</li>
+<li>
+<p>Set the odomFrameId input field to <code>odom</code>. This will now enable publishing odom -&gt; base_link frames in the TF tree.</p>
+</li>
+</ul>
+<p>At this point we are publishing odometry data and our TF tree only consists of odom -&gt; base_link. We would also like to add the robot articulations under base_link to the TF tree. To do this, add a ROS2 Publish Transform Tree node to the graph and attach the Exec In, Context, and Timestamp fields similarly to previous nodes above.</p>
+<p><img alt="alt text" src="../image-5.png" /></p>
+<ul>
+<li>
+<p>In the Property tab for the <strong>ROS2 Publish Transform Tree</strong> node:</p>
+</li>
+<li>
+<p>Set the targetPrims input field to the path to your Turtlebot Prim (ie. <code>/World/turtlebot3_burger</code>). Ensure it is identical to the prim path set in the Isaac Compute Odometry Node.</p>
+</li>
+<li>
+<p>Set the parentPrim input field to the path to your base_link inside your Turtlebot Prim (ie. <code>/World/turtlebot3_burger/base_link</code>).</p>
+</li>
+</ul>
+<p>Now we should be publishing a TF tree that consists of odom -&gt; base_link -&gt; <other robot links>. This next step is only required when you want to have ground truth localization of the robot. Usually, a ROS package for localization such as Nav2 AMCL would be responsible for setting the transform between a global frame and the odom frame. To setup ground truth localization, add in another ROS2 Publish Raw Transform Tree node to the graph and attach the Exec In, Context, and Timestamp fields similarly to previous nodes above.</p>
+<ul>
+<li>
+<p>In the Property tab for the recently added ROS2 Publish Raw Transform Tree node:</p>
+</li>
+<li>
+<p>Set the childFrameId input field to odom.</p>
+</li>
+<li>
+<p>Set the parentFrameId input field to world. This will now enable publishing world -&gt; odom frames in the TF tree.</p>
+</li>
+<li>
+<p>Leave Translation and Rotation fields detached as this will use the defaults of (0.0, 0.0, 0.0) translation vector (XYZ) and (1.0, 0.0, 0.0, 0.0) rotation quaternion (IJKR). This rotation and translation corresponds to the robot’s Start pose. If the robot starts in a different position, these fields would have to be updated accordingly to match that pose.</p>
+</li>
+</ul>
+<p><img alt="alt text" src="../image-6.png" /></p>
+<p>run:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ros2 run tf2_tools view_frames
+</span></code></pre></div>
+<p>A file will be generated: <code>frames_2024-10-21_13.23.58.pdf</code></p>
+<p><a href="https://docs.omniverse.nvidia.com/isaacsim/latest/ros2_tutorials/tutorial_ros2_tf.html#graph-shortcuts">Graph Shortcuts</a></p>
 <h2 id="next-step">Next Step<a class="headerlink" href="#next-step" title="Permanent link">&para;</a></h2>
 <p><a href="../9_doc/">ROS2 Setting Publish Rates</a></p>
 <h2 id="previous-step">Previous Step<a class="headerlink" href="#previous-step" title="Permanent link">&para;</a></h2>

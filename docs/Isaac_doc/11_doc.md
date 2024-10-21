@@ -270,10 +270,19 @@ Outside of the container (on the host), open a new terminal and ensure ROS is in
 
 ```
 source ${ISAAC_ROS_WS}/install/setup.bash
-run the ~carter_navigation~ launch file
+ros2 launch carter_navigation carter_navigation.launch.py
 ```
 
 The robot model is automatically loaded in the scene in Rviz.
+
+If want to replace a occupancy map:
+
+use `docker ps` to check docker id. e.g., a2e2bd586226
+
+```
+docker cp $ISAAC_ROS_WS/src/navigation/carter_navigation/maps/carter_warehouse_navigation.png a2e2bd586226:/workspaces/isaac_ros-dev/src/navigation/carter_navigation/maps/carter_warehouse_navigation.png
+```
+
 
 Sending Goals Programmatically:
 
